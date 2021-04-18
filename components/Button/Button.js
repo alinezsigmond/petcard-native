@@ -1,11 +1,20 @@
 import React from 'react';
-import {View, Text } from 'react-native'
+import {View, Text, TouchableHighlight, Alert } from 'react-native'
 import style from './style'
 
 export default function Button(props) {
+    const tocou = ()=> {
+        Alert.alert(
+            'Funcionou',
+            'Parabéns, estou orgulhosa :)'
+        )
+    }
     return(
-        <View style={style.buttonStyle}>
+        <TouchableHighlight 
+        style={style.buttonStyle} 
+        underlayColor="#3C6382" 
+        onPress={tocou}>
             <Text style={style.textButton} >{props.text}</Text>
-        </View>
+        </TouchableHighlight>
     )
 }
