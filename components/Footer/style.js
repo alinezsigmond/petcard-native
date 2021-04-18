@@ -5,11 +5,13 @@ export default StyleSheet.create({
         width: '100%',
         height: 60,
         justifyContent: 'center',
-        backgroundColor: '#3C6382'
+        alignContent: 'center',
+        backgroundColor: '#3C6382',
+        alignSelf: 'flex-end',
     },
     arrow:{
         marginLeft: 'auto',
         marginRight: 'auto',
-        width: 18,
+        width: 20
     }
 })

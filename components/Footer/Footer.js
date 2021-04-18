@@ -4,7 +4,7 @@ import style from './style'
 
 export default function Footer(){
     return(
-        <TouchableHighlight underlayColor="#3C6382" style={style.footer}>
+        <TouchableHighlight style={style.footer}>
             <Image 
             style={style.arrow} 
             resizeMethod='scale'

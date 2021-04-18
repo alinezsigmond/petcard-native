@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native'
 
 export default StyleSheet.create({
-    container:{
-        width: '100%',
+    container: {
         height: '100%',
+        width: '100%',
         backgroundColor: '#fff',
     },
-    input:{
+    input: {
         height: 50,
         marginHorizontal: 25,
         marginVertical: 8,
@@ -18,18 +18,20 @@ export default StyleSheet.create({
         paddingHorizontal: 15,
         fontSize: 15
     },
-    inputs:{
-        marginTop: 30,
+    basic:{
+        marginTop: 15
     },
-    forgot:{
-        marginTop: 10,
-        fontSize: 17,
+    personal:{
+        marginTop: 15,
+        paddingTop: 20,
+        paddingBottom: 20,
+        backgroundColor: 'rgba(146, 212, 239, 0.3)'
+    },
+    info:{
         fontFamily: 'Summit-Attack',
-        color: '#2C748C',
+        fontSize: 23,
+        color: '#3C6382',
         textAlign: 'center',
-    },
-    fixed:{
-        height: '56%',
-        justifyContent: 'flex-end'
+        marginBottom: 15
     }
 })

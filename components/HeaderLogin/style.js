@@ -49,11 +49,11 @@ export default StyleSheet.create({
         fontFamily: 'Summit-Attack',
         fontSize: 20
     },
-    bar: {
+    barCadastro: {
         width: '50%',
         height: 5,
         backgroundColor: '#92D4EF',
         position: 'absolute',
         bottom: 0
-    }
+    },
 })
