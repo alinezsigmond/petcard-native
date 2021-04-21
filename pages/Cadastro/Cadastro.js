@@ -9,6 +9,7 @@ export default function Cadastro() {
     return(
         <ScrollView style={style.container}>
             <HeaderLogin />
+            <View style={style.bar} />
             <View style={style.basic}>
                 <TextInput
                 placeholder='Nome Completo'

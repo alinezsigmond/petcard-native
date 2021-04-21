@@ -29,7 +29,13 @@ export default StyleSheet.create({
         textAlign: 'center',
     },
     fixed:{
-        height: '56%',
+        height: '55.5%',
         justifyContent: 'flex-end'
-    }
+    },
+    bar: {
+        width: '50%',
+        height: 5,
+        backgroundColor: '#92D4EF',
+        marginLeft: '50%'
+    },
 })

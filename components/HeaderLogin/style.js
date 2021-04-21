@@ -9,7 +9,7 @@ export default StyleSheet.create({
     logo:{
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 24,
+        marginTop: 26,
     },
     text: {
         marginTop: 15,
@@ -42,18 +42,11 @@ export default StyleSheet.create({
     cadastrar:{
         color: '#fff',
         fontFamily: 'Summit-Attack',
-        fontSize: 20
+        fontSize: 21
     },
     login: {
         color: '#fff',
         fontFamily: 'Summit-Attack',
-        fontSize: 20
-    },
-    barCadastro: {
-        width: '50%',
-        height: 5,
-        backgroundColor: '#92D4EF',
-        position: 'absolute',
-        bottom: 0
-    },
+        fontSize: 21
+    }
 })

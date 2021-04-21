@@ -10,6 +10,7 @@ export default function Login() {
     return(
         <View style={style.container} >
             <HeaderLogin />
+            <View style={style.bar} />
             <View style={style.inputs} >
                 <TextInput
                 style={style.input}

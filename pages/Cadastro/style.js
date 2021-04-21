@@ -33,5 +33,10 @@ export default StyleSheet.create({
         color: '#3C6382',
         textAlign: 'center',
         marginBottom: 15
-    }
+    },
+    bar: {
+        width: '50%',
+        height: 5,
+        backgroundColor: '#92D4EF'
+    },
 })
