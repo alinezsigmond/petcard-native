@@ -4,6 +4,7 @@ import { StatusBar, Text, TextInput } from 'react-native'
 //import Button from './components/Button/Button'
 import Error from './pages/404/404'
 import Cadastro from './pages/Cadastro/Cadastro'
+import Index from './pages/Index/Index'
 import Login from './pages/Login/Login'
 
 export default function App() {
@@ -14,7 +15,8 @@ export default function App() {
     {/* <Error /> */}
     {/* <Cadastro /> */}
     {/* <Login /> */}
-    <Cadastro />
+    {/* <Cadastro /> */}
+    <Index />
     </>
   )
 }
