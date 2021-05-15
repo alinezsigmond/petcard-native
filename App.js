@@ -3,7 +3,6 @@ import { StatusBar, Text, TextInput } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
-//import Button from './components/Button/Button'
 import Error from './pages/404/404'
 import Cadastro from './pages/Cadastro/Cadastro'
 import Index from './pages/Index/Index'
@@ -15,13 +14,14 @@ export default function App() {
   return(
     <>
     <StatusBar backgroundColor="#3C6382" barStyle='light-content' />
-    <NavigationContainer>
+    <Cadastro />
+    {/* <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen options={{ headerShown: false }} name="Index" component={Index} />
         <Stack.Screen options={{ headerShown: false }} name="Login" component={Login} />
         <Stack.Screen options={{ headerShown: false }} name="Cadastro" component={Cadastro} />
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer> */}
     </>
   )
 }

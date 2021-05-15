@@ -39,4 +39,12 @@ export default StyleSheet.create({
         height: 5,
         backgroundColor: '#92D4EF'
     },
+    footer: {
+        width: '100%',
+        height: 60,
+        justifyContent: 'center',
+        alignContent: 'center',
+        backgroundColor: '#3C6382',
+        alignSelf: 'flex-end',
+    },
 })
