@@ -4,7 +4,10 @@ import style from './style'
 
 export default function Footer(){
     return(
-        <TouchableHighlight style={style.footer} onPress={Alert.alert('Oi')} >
+        <TouchableHighlight
+        style={style.footer}
+        // onPress={() => Alert.alert('Oi')}
+        >
             <Image 
             style={style.arrow} 
             resizeMethod='scale'

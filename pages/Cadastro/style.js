@@ -47,4 +47,9 @@ export default StyleSheet.create({
         backgroundColor: '#3C6382',
         alignSelf: 'flex-end',
     },
+    arrow:{
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: 20
+    }
 })

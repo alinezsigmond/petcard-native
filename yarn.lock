@@ -4901,6 +4901,11 @@
   "resolved" "https://registry.npmjs.org/mockdate/-/mockdate-3.0.5.tgz"
   "version" "3.0.5"
 
+"moment@2.19.3":
+  "integrity" "sha1-vbmdJw1tf9p4zA+6zoVeJ/59pp8="
+  "resolved" "https://registry.npmjs.org/moment/-/moment-2.19.3.tgz"
+  "version" "2.19.3"
+
 "ms@2.0.0":
   "integrity" "sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g="
   "resolved" "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz"
@@ -5551,6 +5556,14 @@
   "integrity" "sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg=="
   "resolved" "https://registry.npmjs.org/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz"
   "version" "1.3.1"
+
+"react-native-masked-text@^1.12.5":
+  "integrity" "sha512-lKGxeMbRW7c5pgGt6lSSsobIs5v3Gys8GHR4t5QDbHSJENDIOY97MWeucyhbuG+zJOhBo1XFIkCHkg5PsLU14g=="
+  "resolved" "https://registry.npmjs.org/react-native-masked-text/-/react-native-masked-text-1.12.5.tgz"
+  "version" "1.12.5"
+  dependencies:
+    "moment" "2.19.3"
+    "tinymask" "^1.0.2"
 
 "react-native-reanimated@^2.1.0":
   "integrity" "sha512-tlPvvcdf+X7HGQ7g/7npBFhwMznfdk7MHUc9gUB/kp2abSscXNe/kOVKlrNEOO4DS11rNOXc+llFxVFMuNk0zA=="
@@ -6570,6 +6583,11 @@
   dependencies:
     "readable-stream" "~2.3.6"
     "xtend" "~4.0.1"
+
+"tinymask@^1.0.2":
+  "integrity" "sha1-3zd1qUCHsNPQVsJW6JI8AbfsCUE="
+  "resolved" "https://registry.npmjs.org/tinymask/-/tinymask-1.0.2.tgz"
+  "version" "1.0.2"
 
 "tmpl@1.0.x":
   "integrity" "sha1-I2QN17QtAEM5ERQIIOXPRA5SHdE="

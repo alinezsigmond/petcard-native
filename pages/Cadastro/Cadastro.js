@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import { Alert, Button, ScrollView, Text, TextInput, View, TouchableHighlight } from 'react-native'
+import { Alert, Button, ScrollView, Text, TextInput, View, TouchableHighlight, Image } from 'react-native'
+import { TextInputMask } from 'react-native-masked-text'
 import Footer from '../../components/Footer/Footer'
 import HeaderLogin from '../../components/HeaderLogin/HeaderLogin'
 
@@ -37,97 +38,106 @@ export default function Cadastro() {
             <View style={style.bar} />
             <View style={style.basic}>
                 <TextInput
-                placeholder='Nome Completo'
-                placeholderTextColor='#3C6382'
-                style={style.input}
-                onChangeText={value => setNome(value)}
+                    placeholder='Nome Completo'
+                    placeholderTextColor='#3C6382'
+                    style={style.input}
+                    onChangeText={value => setNome(value)}
                 />
                 <TextInput
-                placeholder='E-mail'
-                placeholderTextColor='#3C6382'
-                keyboardType='email-address'
-                style={style.input}
-                onChangeText={value => setEmail(value)}
+                    placeholder='E-mail'
+                    placeholderTextColor='#3C6382'
+                    keyboardType='email-address'
+                    style={style.input}
+                    onChangeText={value => setEmail(value)}
                 />
                 <TextInput
-                placeholder='Confirme o e-mail'
-                placeholderTextColor='#3C6382'
-                keyboardType='email-address'
-                style={style.input}
-                onChangeText={value => setEmail2(value)}
+                    placeholder='Confirme o e-mail'
+                    placeholderTextColor='#3C6382'
+                    keyboardType='email-address'
+                    style={style.input}
+                    onChangeText={value => setEmail2(value)}
                 />
                 <TextInput
-                placeholder='Senha'
-                placeholderTextColor='#3C6382'
-                secureTextEntry={true}
-                style={style.input}
-                onChangeText={value => setSenha(value)}
+                    placeholder='Senha'
+                    placeholderTextColor='#3C6382'
+                    secureTextEntry={true}
+                    style={style.input}
+                    onChangeText={value => setSenha(value)}
                 />
                 <TextInput
-                placeholder='Confirme a senha'
-                placeholderTextColor='#3C6382'
-                secureTextEntry={true}
-                style={style.input}
-                onChangeText={value => setSenha2(value)}
+                    placeholder='Confirme a senha'
+                    placeholderTextColor='#3C6382'
+                    secureTextEntry={true}
+                    style={style.input}
+                    onChangeText={value => setSenha2(value)}
                 />
             </View>
             <View style={style.personal}>
                 <Text style={style.info}>Informações Pessoais</Text>
-                <TextInput
-                placeholder='Data de nascimento'
-                keyboardType="numeric"
-                returnKeyType="done"
-                placeholderTextColor='#3C6382'
-                style={style.input}
-                onChangeText={value => setNascimento(value)}
+                <TextInputMask
+                    placeholder='Data de nascimento'
+                    placeholderTextColor='#3C6382'
+                    type='datetime'
+                    options={{
+                        format: 'DD/MM/YYYY'
+                    }}
+                    style={style.input}
+                    onChangeText={value => setNascimento(value)} 
+                />
+                <TextInputMask 
+                    style={style.input}
+                    placeholderTextColor='#3C6382'
+                    placeholder='CEP'
+                    keyboardType='numeric'
+                    type='custom'
+                    options={{
+                        mask: '99999-999'
+                    }}
+                    onChangeText={value => setCep(value)} 
                 />
                 <TextInput
-                placeholder='CEP'
-                keyboardType="numeric"
-                returnKeyType="done"
-                placeholderTextColor='#3C6382'
-                style={style.input}
-                onChangeText={value => setCep(value)}
+                    placeholder='País'
+                    placeholderTextColor='#3C6382'
+                    style={style.input}
+                    onChangeText={value => setPais(value)}
                 />
                 <TextInput
-                placeholder='País'
-                placeholderTextColor='#3C6382'
-                style={style.input}
-                onChangeText={value => setPais(value)}
+                    placeholder='Estado'
+                    placeholderTextColor='#3C6382'
+                    style={style.input}
+                    onChangeText={value => setEstado(value)}
                 />
                 <TextInput
-                placeholder='Estado'
-                placeholderTextColor='#3C6382'
-                style={style.input}
-                onChangeText={value => setEstado(value)}
+                    placeholder='Cidade'
+                    placeholderTextColor='#3C6382'
+                    style={style.input}
+                    onChangeText={value => setCidade(value)}
                 />
                 <TextInput
-                placeholder='Cidade'
-                placeholderTextColor='#3C6382'
-                style={style.input}
-                onChangeText={value => setCidade(value)}
+                    placeholder='Rua'
+                    placeholderTextColor='#3C6382'
+                    style={style.input}
+                    onChangeText={value => setRua(value)}
                 />
                 <TextInput
-                placeholder='Rua'
-                placeholderTextColor='#3C6382'
-                style={style.input}
-                onChangeText={value => setRua(value)}
-                />
-                <TextInput
-                placeholder='Número'
-                keyboardType="numeric"
-                returnKeyType="done"
-                placeholderTextColor='#3C6382'
-                style={style.input}
-                onChangeText={value => setNumero(value)}
+                    placeholder='Número'
+                    keyboardType="numeric"
+                    returnKeyType="done"
+                    placeholderTextColor='#3C6382'
+                    style={style.input}
+                    onChangeText={value => setNumero(value)}
                 />
             </View>
             <TouchableHighlight 
-            underlayColor='#2C748C'
-            style={style.footer} 
-            onPress={() => console.log(cadastro)}
+                underlayColor='#2C748C'
+                style={style.footer} 
+                onPress={() => console.log(cadastro)}
             >
-                <Text>Touch me</Text>
+                <Image 
+                style={style.arrow} 
+                resizeMethod='scale'
+                source={require('../../assets/images/arrow.png')}
+                />
             </TouchableHighlight>
         </ScrollView>
     )
