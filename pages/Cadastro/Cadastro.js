@@ -19,11 +19,13 @@ export default function Cadastro() {
                 <TextInput
                 placeholder='E-mail'
                 placeholderTextColor='#3C6382'
+                keyboardType='email-address'
                 style={style.input}
                 />
                 <TextInput
                 placeholder='Confirme o e-mail'
                 placeholderTextColor='#3C6382'
+                keyboardType='email-address'
                 style={style.input}
                 />
                 <TextInput
@@ -44,12 +46,14 @@ export default function Cadastro() {
                 <TextInput
                 placeholder='Data de nascimento'
                 keyboardType="numeric"
+                returnKeyType="done"
                 placeholderTextColor='#3C6382'
                 style={style.input}
                 />
                 <TextInput
                 placeholder='CEP'
                 keyboardType="numeric"
+                returnKeyType="done"
                 placeholderTextColor='#3C6382'
                 style={style.input}
                 />
@@ -76,6 +80,7 @@ export default function Cadastro() {
                 <TextInput
                 placeholder='Número'
                 keyboardType="numeric"
+                returnKeyType="done"
                 placeholderTextColor='#3C6382'
                 style={style.input}
                 />

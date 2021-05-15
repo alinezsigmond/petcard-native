@@ -13,7 +13,8 @@ export default function Button(props) {
         <TouchableHighlight 
         style={style.buttonStyle} 
         underlayColor="#3C6382" 
-        onPress={tocou}>
+        // onPress={tocou}
+        >
             <Text style={style.textButton} >{props.text}</Text>
         </TouchableHighlight>
     )
