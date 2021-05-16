@@ -38,4 +38,17 @@ export default StyleSheet.create({
         backgroundColor: '#92D4EF',
         marginLeft: '50%'
     },
+    footer: {
+        width: '100%',
+        height: 60,
+        justifyContent: 'center',
+        alignContent: 'center',
+        backgroundColor: '#3C6382',
+        alignSelf: 'flex-end',
+    },
+    arrow:{
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: 20
+    }
 })

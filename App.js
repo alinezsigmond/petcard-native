@@ -14,14 +14,13 @@ export default function App() {
   return(
     <>
     <StatusBar backgroundColor="#3C6382" barStyle='light-content' />
-    <Cadastro />
-    {/* <NavigationContainer>
+    <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen options={{ headerShown: false }} name="Index" component={Index} />
-        <Stack.Screen options={{ headerShown: false }} name="Login" component={Login} />
-        <Stack.Screen options={{ headerShown: false }} name="Cadastro" component={Cadastro} />
+        <Stack.Screen options={{ headerShown: false }} name='Index' component={Index} />
+        <Stack.Screen options={{ headerShown: false }} name='Login' component={Login} />
+        <Stack.Screen options={{ headerShown: false }} name='Cadastro' component={Cadastro} />
       </Stack.Navigator>
-    </NavigationContainer> */}
+    </NavigationContainer>
     </>
   )
 }

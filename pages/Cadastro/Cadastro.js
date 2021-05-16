@@ -1,8 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import { Alert, Button, ScrollView, Text, TextInput, View, TouchableHighlight, Image } from 'react-native'
+import { ScrollView, Text, TextInput, View, TouchableHighlight, Image } from 'react-native'
 import { TextInputMask } from 'react-native-masked-text'
-import Footer from '../../components/Footer/Footer'
 import HeaderLogin from '../../components/HeaderLogin/HeaderLogin'
 
 import style from './style'
@@ -129,14 +128,14 @@ export default function Cadastro() {
                 />
             </View>
             <TouchableHighlight 
-                underlayColor='#2C748C'
+                underlayColor='#32536E'
                 style={style.footer} 
                 onPress={() => console.log(cadastro)}
             >
                 <Image 
-                style={style.arrow} 
-                resizeMethod='scale'
-                source={require('../../assets/images/arrow.png')}
+                    style={style.arrow} 
+                    resizeMethod='scale'
+                    source={require('../../assets/images/arrow.png')}
                 />
             </TouchableHighlight>
         </ScrollView>
