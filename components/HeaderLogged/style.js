@@ -8,7 +8,7 @@ export default StyleSheet.create({
     },
     nome: {
         fontFamily: 'Quanto',
-        fontSize: 35,
+        fontSize: 36,
         color: '#FFF',
         textAlign: 'center'
     },

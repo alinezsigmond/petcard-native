@@ -7,7 +7,7 @@ export default function HeaderLogged(props) {
     return(
         <ImageBackground source={require('../../assets/images/bg-dark.png')} style={style.header}>
             <View style={style.icon}>
-                <Image source={require('../../assets/images/user.png')} />
+                <Image source={props.imgSource} />
             </View>
             <Text style={style.nome}>{props.nome}</Text>
         </ImageBackground>

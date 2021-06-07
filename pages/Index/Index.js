@@ -2,8 +2,6 @@ import React from 'react';
 import { View, Text, Image, ImageBackground, TouchableHighlight } from 'react-native';
 import style from './style'
 
-import Button from '../../components/Button/Button'
-
 export default function Index({navigation}) {
     
     return(

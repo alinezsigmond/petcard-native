@@ -5,7 +5,7 @@ import HeaderLogin from '../../components/HeaderLogin/HeaderLogin'
 
 import style from './style'
 
-export default function Login() {
+export default function Login({navigation}) {
     const [email, setEmail] = useState(null)
     const [senha, setSenha] = useState(null)
     const login = {
@@ -36,7 +36,7 @@ export default function Login() {
                 <TouchableHighlight 
                     underlayColor='#32536E'
                     style={style.footer} 
-                    onPress={() => console.log(login)}
+                    onPress={() => navigation.navigate('Dashboard')}
                 >
                     <Image 
                         style={style.arrow} 
