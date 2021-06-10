@@ -10,6 +10,7 @@ import Index from './pages/Index/Index'
 import Login from './pages/Login/Login'
 import Dashboard from './pages/Dashboard/Dashboard'
 import MeusPets from './pages/MeusPets/MeusPets'
+import CadastroPet from './pages/CadastroPet/CadastroPet'
 import Menu from './components/Menu/Menu'
 
 export default function App() {
@@ -30,8 +31,10 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen options={{ headerShown: false }} name='Index' component={Index} />
+        <Stack.Screen options={{ headerShown: false }} name='Erro' component={Error} />
         <Stack.Screen options={{ headerShown: false }} name='Login' component={Login} />
         <Stack.Screen options={{ headerShown: false }} name='Cadastro' component={Cadastro} />
+        <Stack.Screen options={{ headerShown: false }} name='Cadastro pet' component={CadastroPet} />
         <Stack.Screen options={{ headerShown: false }} name='Dashboard' component={DrawerScreens} />
       </Stack.Navigator>
     </NavigationContainer>
