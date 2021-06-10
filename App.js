@@ -10,30 +10,31 @@ import Index from './pages/Index/Index'
 import Login from './pages/Login/Login'
 import Dashboard from './pages/Dashboard/Dashboard'
 import MeusPets from './pages/MeusPets/MeusPets'
+import Menu from './components/Menu/Menu'
 
 export default function App() {
   const Stack = createStackNavigator();
   const Drawer = createDrawerNavigator();
-  // function DrawerScreens() {
-  //   return (
-  //     <Drawer.Navigator>
-  //       <Drawer.Screen name='Home' component={Dashboard} />
-  //     </Drawer.Navigator>
-  //   )
-  // }
+  function DrawerScreens() {
+    return (
+      <Drawer.Navigator drawerContent={props => <Menu {...props} nome='Aline Zsigmond' cidade='Foz do Iguaçu' />}>
+        <Drawer.Screen name='Home' component={Dashboard} />
+        <Drawer.Screen name='Meus pets' component={MeusPets} />
+      </Drawer.Navigator>
+    )
+  }
   return(
     <>
     <StatusBar backgroundColor="#3C6382" barStyle='light-content' />
-    <MeusPets />
-    {/* <NavigationContainer>
+    {/* <MeusPets /> */}
+    <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen options={{ headerShown: false }} name='Index' component={Index} />
         <Stack.Screen options={{ headerShown: false }} name='Login' component={Login} />
         <Stack.Screen options={{ headerShown: false }} name='Cadastro' component={Cadastro} />
-        <Stack.Screen options={{ headerShown: false }} name='Meus pets' component={MeusPets} />
         <Stack.Screen options={{ headerShown: false }} name='Dashboard' component={DrawerScreens} />
       </Stack.Navigator>
-    </NavigationContainer> */}
+    </NavigationContainer>
     </>
   )
 }
