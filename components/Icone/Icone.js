@@ -7,7 +7,7 @@ export default function Icone(props, {navigation}) {
     return(
         <View style={style.iconContainer}>
             <TouchableHighlight 
-            onPress={ () => console.log('Obrigada por clicar! Ainda estou aprendendo como redirecionar seu clique pra onde eu quero') } 
+            onPress={ props.action } 
             style={style.icon}
             underlayColor="#3C6382"
             >

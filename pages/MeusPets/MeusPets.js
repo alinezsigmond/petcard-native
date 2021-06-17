@@ -15,7 +15,10 @@ export default function MeusPets({navigation}) {
             <TouchableHighlight 
                 style={style.pets}
             >
-                <Pet imgSource={require('../../assets/images/add-pet.png')} nome='Novo pet' />
+                <Pet
+                    imgSource={require('../../assets/images/add-pet.png')}
+                    nome='Novo pet'
+                />
             </TouchableHighlight>
         </View>
     )

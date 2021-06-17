@@ -37,4 +37,8 @@ export default StyleSheet.create({
         flexWrap: 'wrap',
         textAlign: 'center'
     },
+    picker: {
+        backgroundColor: '#000'
+        
+    }
 })

@@ -1,0 +1,202 @@
+[
+    {
+        "id": "0",
+        "breed": "SRD - Sem Raça Definida"
+    },
+    {
+        "id": "1",
+        "breed": "Abissínio"
+    },
+    {
+        "id": "2",
+        "breed": "Angorá"
+    },
+    {
+        "id": "3",
+        "breed": "Balinês"
+    },
+    {
+        "id": "4",
+        "breed": "Bengal"
+    },
+    {
+        "id": "5",
+        "breed": "Bobtail americano"
+    },
+    {
+        "id": "6",
+        "breed": "Bobtail japonês"
+    },
+    {
+        "id": "7",
+        "breed": "Bombay"
+    },
+    {
+        "id": "8",
+        "breed": "Burmês"
+    },
+    {
+        "id": "9",
+        "breed": "Burmês vermelho"
+    },
+    {
+        "id": "10",
+        "breed": "Chartreux"
+    },
+    {
+        "id": "11",
+        "breed": "Colorpoint Shorthair"
+    },
+    {
+        "id": "12",
+        "breed": "Cornish Rex"
+    },
+    {
+        "id": "13",
+        "breed": "Curl Americano"
+    },
+    {
+        "id": "14",
+        "breed": "Devon Rex"
+    },
+    {
+        "id": "15",
+        "breed": "Himalaio"
+    },
+    {
+        "id": "16",
+        "breed": "Jaguatirica"
+    },
+    {
+        "id": "17",
+        "breed": "Javanês"
+    },
+    {
+        "id": "18",
+        "breed": "Korat"
+    },
+    {
+        "id": "19",
+        "breed": "LaPerm"
+    },
+    {
+        "id": "20",
+        "breed": "Maine Coon"
+    },
+    {
+        "id": "21",
+        "breed": "Manx"
+    },
+    {
+        "id": "22",
+        "breed": "Cymric"
+    },
+    {
+        "id": "23",
+        "breed": "Mau Egípcio"
+    },
+    {
+        "id": "24",
+        "breed": "Mist Australiano"
+    },
+    {
+        "id": "25",
+        "breed": "Munchkin"
+    },
+    {
+        "id": "26",
+        "breed": "Norueguês da Floresta"
+    },
+    {
+        "id": "27",
+        "breed": "Pelo curto americano"
+    },
+    {
+        "id": "28",
+        "breed": "Pelo curto brasileiro"
+    },
+    {
+        "id": "29",
+        "breed": "Pelo curto europeu"
+    },
+    {
+        "id": "30",
+        "breed": "Pelo curto inglês"
+    },
+    {
+        "id": "31",
+        "breed": "Persa"
+    },
+    {
+        "id": "32",
+        "breed": "Pixie-bob"
+    },
+    {
+        "id": "33",
+        "breed": "Ragdoll"
+    },
+    {
+        "id": "34",
+        "breed": "Ocicat"
+    },
+    {
+        "id": "35",
+        "breed": "Russo Azul"
+    },
+    {
+        "id": "36",
+        "breed": "Sagrado da Birmânia"
+    },
+    {
+        "id": "37",
+        "breed": "Savannah"
+    },
+    {
+        "id": "38",
+        "breed": "Scottish Fold"
+    },
+    {
+        "id": "39",
+        "breed": "Selkirk Rex"
+    },
+    {
+        "id": "40",
+        "breed": "Siamês"
+    },
+    {
+        "id": "41",
+        "breed": "Siberiano"
+    },
+    {
+        "id": "42",
+        "breed": "Singapura"
+    },
+    {
+        "id": "43",
+        "breed": "Somali"
+    },
+    {
+        "id": "44",
+        "breed": "Sphynx"
+    },
+    {
+        "id": "45",
+        "breed": "Thai"
+    },
+    {
+        "id": "46",
+        "breed": "Tonquinês"
+    },
+    {
+        "id": "47",
+        "breed": "Toyger"
+    },
+    {
+        "id": "48",
+        "breed": "Usuri"
+    },
+    {
+        "id": "49",
+        "breed": "Outro"
+    }
+]
