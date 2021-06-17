@@ -40,23 +40,17 @@ export default function CadastroPet({navigation}) {
                 <Text style={style.titulo} >Qual pet deseja cadastrar?</Text>
                 <Text style={style.subtitulo} >Preencha o formulário. Quanto mais informação, melhor!</Text>
             </ImageBackground>
-            {/* <DropDownPicker
-            open={open}
-            value={value}
-            items={items}
-            setOpen={setOpen}
-            setValue={setValue}
-            setItems={setItems}
-            /> */}
+            
             <Picker
+            style
             dropdownIconColor='#3C6382'
             selectedValue={especie}
-            onValueChange={(itemValue, itemIndex) =>
+            onValueChange={(itemValue) =>
               setEspecie(itemValue)
             }>
-                <Picker.Item label='Selecione a espécie' value={0} />
-                <Picker.Item label='Cachorro' value={1} />
-                <Picker.Item label='Gato' value={2} />
+                <Picker.Item key={especie.id} label='Selecione a espécie' value={0} />
+                <Picker.Item key={especie.id} label='Cachorro' value={1} />
+                <Picker.Item key={especie.id} label='Gato' value={2} />
             </Picker>
 
             {
@@ -70,6 +64,7 @@ export default function CadastroPet({navigation}) {
                 >
                     {
                         racasCachorro.map((racasCachorro) => <Picker.Item
+                        key={racasCachorro.id}
                         label={racasCachorro.breed} 
                         value={racasCachorro.id} />)
                     }
@@ -83,6 +78,7 @@ export default function CadastroPet({navigation}) {
                 >
                     {
                         racasGato.map((racasGato) => <Picker.Item
+                        key={racasGato.id}
                         label={racasGato.breed} 
                         value={racasGato.id} />)
                     }
