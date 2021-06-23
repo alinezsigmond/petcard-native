@@ -1,13 +1,11 @@
 import React from 'react'
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
-import { Text, View, TouchableHighlight } from 'react-native'
+import { View } from 'react-native'
 import style from './style'
 
 import HeaderLogged from '../../components/HeaderLogged/HeaderLogged'
 import Icone from '../../components/Icone/Icone'
 
-export default function Dashboard({navigation}) {
+export default function Home({navigation}) {
     
     return(
         <View style={style.container}>

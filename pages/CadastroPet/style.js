@@ -11,6 +11,7 @@ export default StyleSheet.create({
         height: 185,
         justifyContent: 'center',
         alignItems: 'center',
+        marginBottom: 20
     },
     pressable: {  
         alignSelf: 'flex-start',
@@ -38,7 +39,37 @@ export default StyleSheet.create({
         textAlign: 'center'
     },
     picker: {
-        backgroundColor: '#000'
-        
+        backgroundColor: '#FFF',
+        color: '#3C6382',
+        borderWidth: 1,
+        borderColor: '#92D4EF',
+        margin: 10,
+        width: '85%',
+        alignSelf: 'center'
+    },
+    input: {
+        backgroundColor: '#FFF',
+        color: '#3C6382',
+        fontSize: 14,
+        borderWidth: 1,
+        borderColor: '#92D4EF',
+        paddingLeft: 15,
+        margin: 10,
+        width: '85%',
+        alignSelf: 'center'
+    },
+    footer: {
+        width: '100%',
+        height: 60,
+        justifyContent: 'center',
+        alignContent: 'center',
+        backgroundColor: '#3C6382',
+        position: 'absolute',
+        bottom: 0
+    },
+    arrow:{
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: 20
     }
 })

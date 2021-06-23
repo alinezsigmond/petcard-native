@@ -36,7 +36,7 @@ export default function Login({navigation}) {
                 <TouchableHighlight 
                     underlayColor='#32536E'
                     style={style.footer} 
-                    onPress={() => navigation.navigate('Dashboard')}
+                    onPress={() => navigation.navigate('Home')}
                 >
                     <Image 
                         style={style.arrow} 
