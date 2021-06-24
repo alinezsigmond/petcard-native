@@ -1,24 +1,34 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import api from '../../api'
-import { Button } from 'react-native'
+import { View, Text } from 'react-native'
 
-export default function Teste(){
-  api.get('star%20wars')
-  .then(function (response) {
-    // handle success
-    console.log(response.data);
+export default function Teste() {
+  // const [posts, setPosts] = useState([]);
+  // useEffect(() => {
+  //   api.get('/especies').then(response => setPosts(response.data));
+  // }, []);
+  const token = ' '
+  api.get('/especies', {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
   })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
+  .then((res) => {
+    console.log(res.data)
   })
-  .then(function () {
-    // always executed
-  });
-    return(
-        <Button 
-        title='Mostrai'
-        onPress={() => console.log('clicou, nenê')}
-        />
-    )
+  .catch((error) => {
+    console.error(error)
+  })
+
+  return (
+    <View >
+      <Text>oi :)</Text>
+      {/* {posts.map(post => (
+        <Text key={post.id}>
+          {post.nome}
+        </Text>
+      ))} */}
+    </View>
+  );
 }

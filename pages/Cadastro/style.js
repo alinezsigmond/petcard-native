@@ -19,20 +19,8 @@ export default StyleSheet.create({
         fontSize: 15
     },
     basic:{
-        marginTop: 15
-    },
-    personal:{
         marginTop: 15,
-        paddingTop: 20,
-        paddingBottom: 20,
-        backgroundColor: 'rgba(146, 212, 239, 0.3)'
-    },
-    info:{
-        fontFamily: 'Summit-Attack',
-        fontSize: 23,
-        color: '#3C6382',
-        textAlign: 'center',
-        marginBottom: 15
+        marginBottom: 29.1,
     },
     bar: {
         width: '50%',
@@ -45,7 +33,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
         backgroundColor: '#3C6382',
-        alignSelf: 'flex-end',
+        alignSelf: 'flex-end'
     },
     arrow:{
         marginLeft: 'auto',

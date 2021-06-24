@@ -49,5 +49,13 @@ export default StyleSheet.create({
         marginTop: 'auto',
         marginBottom: 'auto',
         fontFamily: 'Summit-Attack'
+      },
+      cadastre: {
+          fontFamily: 'Summit-Attack',
+          fontSize: 15,
+          color: '#3C6382',
+          textAlign: 'center',
+          marginTop: 10,
+          padding: 10,
       }
 });

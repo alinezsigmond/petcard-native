@@ -16,6 +16,9 @@ export default function Index({navigation}) {
                 >
                     <Text style={style.textButton} >Login</Text>
                 </TouchableHighlight>
+                <TouchableHighlight onPress={() => navigation.navigate('Cadastro')}>
+                    <Text style={style.cadastre}>Não tem conta? Cadastre-se</Text>
+                </TouchableHighlight>
             </View>
         </ImageBackground>
     )

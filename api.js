@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: "https://api.tvmaze.com/search/shows?q=",
+    baseURL: 'http://10.0.2.2:8080/api',
 });
 
 // api.interceptors.request.use(async config => {

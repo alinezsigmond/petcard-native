@@ -13,23 +13,13 @@ export default function Cadastro() {
     const [senha, setSenha] = useState(null)
     const [senha2, setSenha2] = useState(null)
     const [nascimento, setNascimento] = useState(null)
-    const [cep, setCep] = useState(null)
-    const [pais, setPais] = useState(null)
-    const [estado, setEstado] = useState(null)
-    const [cidade, setCidade] = useState(null)
-    const [rua, setRua] = useState(null)
-    const [numero, setNumero] = useState(null)
     const cadastro = {
         nome: nome,
         email: email,
+        email2: email2,
         senha: senha,
+        senha2: senha2,
         nascimento: nascimento,
-        cep: cep,
-        pais: pais,
-        estado: estado,
-        cidade: cidade,
-        rua: rua,
-        numero: numero
     }
     return(
         <ScrollView style={style.container}>
@@ -39,13 +29,26 @@ export default function Cadastro() {
                 <TextInput
                     placeholder='Nome Completo'
                     placeholderTextColor='#3C6382'
+                    returnKeyType="done"
                     style={style.input}
                     onChangeText={value => setNome(value)}
+                />
+                <TextInputMask
+                placeholder='Data de nascimento'
+                placeholderTextColor='#3C6382'
+                returnKeyType="done"
+                type='datetime'
+                options={{
+                    format: 'DD/MM/YYYY'
+                }}
+                style={style.input}
+                onChangeText={value => setNascimento(value)} 
                 />
                 <TextInput
                     placeholder='E-mail'
                     placeholderTextColor='#3C6382'
                     keyboardType='email-address'
+                    returnKeyType="done"
                     style={style.input}
                     onChangeText={value => setEmail(value)}
                 />
@@ -53,6 +56,7 @@ export default function Cadastro() {
                     placeholder='Confirme o e-mail'
                     placeholderTextColor='#3C6382'
                     keyboardType='email-address'
+                    returnKeyType="done"
                     style={style.input}
                     onChangeText={value => setEmail2(value)}
                 />
@@ -60,6 +64,7 @@ export default function Cadastro() {
                     placeholder='Senha'
                     placeholderTextColor='#3C6382'
                     secureTextEntry={true}
+                    returnKeyType="done"
                     style={style.input}
                     onChangeText={value => setSenha(value)}
                 />
@@ -67,66 +72,12 @@ export default function Cadastro() {
                     placeholder='Confirme a senha'
                     placeholderTextColor='#3C6382'
                     secureTextEntry={true}
+                    returnKeyType="done"
                     style={style.input}
                     onChangeText={value => setSenha2(value)}
                 />
             </View>
-            <View style={style.personal}>
-                <Text style={style.info}>Informações Pessoais</Text>
-                <TextInputMask
-                    placeholder='Data de nascimento'
-                    placeholderTextColor='#3C6382'
-                    type='datetime'
-                    options={{
-                        format: 'DD/MM/YYYY'
-                    }}
-                    style={style.input}
-                    onChangeText={value => setNascimento(value)} 
-                />
-                <TextInputMask 
-                    style={style.input}
-                    placeholderTextColor='#3C6382'
-                    placeholder='CEP'
-                    keyboardType='numeric'
-                    type='custom'
-                    options={{
-                        mask: '99999-999'
-                    }}
-                    onChangeText={value => setCep(value)} 
-                />
-                <TextInput
-                    placeholder='País'
-                    placeholderTextColor='#3C6382'
-                    style={style.input}
-                    onChangeText={value => setPais(value)}
-                />
-                <TextInput
-                    placeholder='Estado'
-                    placeholderTextColor='#3C6382'
-                    style={style.input}
-                    onChangeText={value => setEstado(value)}
-                />
-                <TextInput
-                    placeholder='Cidade'
-                    placeholderTextColor='#3C6382'
-                    style={style.input}
-                    onChangeText={value => setCidade(value)}
-                />
-                <TextInput
-                    placeholder='Rua'
-                    placeholderTextColor='#3C6382'
-                    style={style.input}
-                    onChangeText={value => setRua(value)}
-                />
-                <TextInput
-                    placeholder='Número'
-                    keyboardType="numeric"
-                    returnKeyType="done"
-                    placeholderTextColor='#3C6382'
-                    style={style.input}
-                    onChangeText={value => setNumero(value)}
-                />
-            </View>
+            
             <TouchableHighlight 
                 underlayColor='#32536E'
                 style={style.footer} 

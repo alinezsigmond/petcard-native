@@ -64,8 +64,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
         backgroundColor: '#3C6382',
-        position: 'absolute',
-        bottom: 0
+        alignSelf: 'flex-end',
     },
     arrow:{
         marginLeft: 'auto',

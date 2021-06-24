@@ -1,15 +1,26 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ImageBackground, View, Text, Image, TouchableHighlight, TextInput, ScrollView } from 'react-native'
 import {Picker} from '@react-native-picker/picker'
 import { TextInputMask } from 'react-native-masked-text'
 import DropDownPicker from 'react-native-dropdown-picker'
 import style from './style'
 
+import api from '../../api'
+
 import racasGato from './raca-gato.json'
 import racasCachorro from './raca-cachorro.json'
 
 export default function CadastroPet({navigation}) {
+    const token = ' '
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        api.get('/especies', {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          }).then(response => setPosts(response.data));
+    }, []);
     const [especie, setEspecie] = useState(0);
     const [raca, setRaca] = useState();
     const [nome, setNome] = useState(null);
@@ -60,9 +71,13 @@ export default function CadastroPet({navigation}) {
                 onValueChange={(itemValue) =>
                 setEspecie(itemValue)
                 }>
-                    <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Selecione a espécie' value={null} />
+                    <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Selecione a espécie' value={0} />
+                    {posts.map(post => (
+                        <Picker.Item key={post.id} label={post.nome} value={post.id} />
+                    ))}
+                    {/* <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Selecione a espécie' value={null} />
                     <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Cachorro' value={1} />
-                    <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Gato' value={2} />
+                    <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Gato' value={2} /> */}
                 </Picker>
             </View>
 
@@ -106,6 +121,7 @@ export default function CadastroPet({navigation}) {
             <TextInput style={style.input}
                 placeholder='Nome'            
                 placeholderTextColor='#3C6382'
+                returnKeyType="done"
                 onChangeText={value => setNome(value)}
             />
             <TextInputMask
@@ -116,6 +132,7 @@ export default function CadastroPet({navigation}) {
                 options={{
                     format: 'DD/MM/YYYY'
                 }}
+                returnKeyType="done"
                 style={style.input}
                 onChangeText={value => setNascimento(value)}
             />
@@ -131,13 +148,14 @@ export default function CadastroPet({navigation}) {
             </View>
             <View style={style.input}>
                 <TextInputMask 
-                    placeholder='Peso'
+                    placeholder='Peso (kg)'
                     placeholderTextColor='#3C6382'
                     color='#3C6382'
                     keyboardType='numeric'
+                    returnKeyType="done"                    
                     type='custom'
                     options={{
-                        mask: '99,9kg'
+                        mask: '99,9'
                     }}
                     onChangeText={value => setPeso(value)}
                 />
