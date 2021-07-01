@@ -5,6 +5,7 @@ export default StyleSheet.create({
         height: '100%',
         width: '100%',
         backgroundColor: '#fff',
+        flex: 1,
     },
     input: {
         height: 50,
@@ -33,7 +34,8 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
         backgroundColor: '#3C6382',
-        alignSelf: 'flex-end'
+        alignSelf: 'flex-end',
+        marginTop: 132
     },
     arrow:{
         marginLeft: 'auto',

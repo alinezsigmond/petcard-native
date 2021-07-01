@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Text, TextInput, View, TouchableHighlight, Image, Alert } from 'react-native'
 import HeaderLogin from '../../components/HeaderLogin/HeaderLogin'
+import api from '../../api'
 
 import style from './style'
 
@@ -9,8 +10,30 @@ export default function Login({navigation}) {
     const [email, setEmail] = useState(null)
     const [senha, setSenha] = useState(null)
     const login = {
-        email: email,
-        senha: senha
+        username: email,
+        password: senha
+    }
+    const token = ' '
+    const config = {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    }
+    function logar(login) {
+        api.post( 
+            '/login',
+            login,
+            config
+          )
+        .then((res) => {
+            console.log(res.data),
+            alert('Seu token está no console'),
+            navigation.navigate('Home')
+        })
+        .catch((error) => {
+            alert(error),
+            alert('Opa, deu ruim')
+        })
     }
     return(
         <View style={style.container} >
@@ -36,7 +59,7 @@ export default function Login({navigation}) {
                 <TouchableHighlight 
                     underlayColor='#32536E'
                     style={style.footer} 
-                    onPress={() => navigation.navigate('Home')}
+                    onPress={() => logar(login)}
                 >
                     <Image 
                         style={style.arrow} 

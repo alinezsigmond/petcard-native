@@ -26,14 +26,18 @@ export default function CadastroPet({navigation}) {
     const [nome, setNome] = useState(null);
     const [nascimento, setNascimento] = useState(null);
     const [sexo, setSexo] = useState(null);
+    const [castrado, setCastrado] = useState(false);
     const [peso, setPeso] = useState(null);
-    const cadastro = {
+    const pet = {
         especie: especie,
         raca: raca,
         nome: nome,
-        nascimento: nascimento,
+        dataDeNascimento: nascimento,
         sexo: sexo,
         peso: peso
+    }
+    function cadastraPet(pet) {
+        
     }
     
     function hasSelected(especie) {

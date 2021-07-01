@@ -3,23 +3,58 @@ import { useState } from 'react'
 import { ScrollView, Text, TextInput, View, TouchableHighlight, Image } from 'react-native'
 import { TextInputMask } from 'react-native-masked-text'
 import HeaderLogin from '../../components/HeaderLogin/HeaderLogin'
+import api from '../../api'
 
 import style from './style'
 
 export default function Cadastro() {
     const [nome, setNome] = useState(null)
     const [email, setEmail] = useState(null)
-    const [email2, setEmail2] = useState(null)
     const [senha, setSenha] = useState(null)
-    const [senha2, setSenha2] = useState(null)
     const [nascimento, setNascimento] = useState(null)
     const cadastro = {
-        nome: nome,
-        email: email,
-        email2: email2,
-        senha: senha,
-        senha2: senha2,
-        nascimento: nascimento,
+        id:0,
+        normalizedEmail: email,
+        passwordHash: senha,
+        userInfo:{
+            Id:0,
+            nome: nome,
+            dataDeNascimento: nascimento
+        }
+    }
+    const token = ' '
+    const config = {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    }
+    function cadastra(cadastro) {
+        console.log(cadastro)
+        api.post( 
+            '/usuarios',
+            cadastro,
+            config
+          )
+        .then((res) => {
+            console.log(res.data),
+            alert('Cadastro realizado com sucesso!')
+        })
+        .catch((error) => {
+            alert(error),
+            alert('Opa, deu ruim')
+        })
+        // api.post('/usuarios', {
+        //     headers: {
+        //     Authorization: `Bearer ${token}`,
+        //     data: {cadastro},
+        //     }
+        // })
+        // .then((res) => {
+        //     console.log(res.data)
+        // })
+        // .catch((error) => {
+        //     alert(error)
+        // })
     }
     return(
         <ScrollView style={style.container}>
@@ -39,7 +74,7 @@ export default function Cadastro() {
                 returnKeyType="done"
                 type='datetime'
                 options={{
-                    format: 'DD/MM/YYYY'
+                    format: 'YYYY-MM-DD'
                 }}
                 style={style.input}
                 onChangeText={value => setNascimento(value)} 
@@ -52,14 +87,14 @@ export default function Cadastro() {
                     style={style.input}
                     onChangeText={value => setEmail(value)}
                 />
-                <TextInput
+                {/* <TextInput
                     placeholder='Confirme o e-mail'
                     placeholderTextColor='#3C6382'
                     keyboardType='email-address'
                     returnKeyType="done"
                     style={style.input}
                     onChangeText={value => setEmail2(value)}
-                />
+                /> */}
                 <TextInput
                     placeholder='Senha'
                     placeholderTextColor='#3C6382'
@@ -68,20 +103,20 @@ export default function Cadastro() {
                     style={style.input}
                     onChangeText={value => setSenha(value)}
                 />
-                <TextInput
+                {/* <TextInput
                     placeholder='Confirme a senha'
                     placeholderTextColor='#3C6382'
                     secureTextEntry={true}
                     returnKeyType="done"
                     style={style.input}
                     onChangeText={value => setSenha2(value)}
-                />
+                /> */}
             </View>
             
             <TouchableHighlight 
                 underlayColor='#32536E'
                 style={style.footer} 
-                onPress={() => console.log(cadastro)}
+                onPress={() => cadastra(cadastro)}
             >
                 <Image 
                     style={style.arrow} 
