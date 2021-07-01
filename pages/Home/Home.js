@@ -4,9 +4,18 @@ import style from './style'
 
 import HeaderLogged from '../../components/HeaderLogged/HeaderLogged'
 import Icone from '../../components/Icone/Icone'
+import api from '../../api'
+import { getToken } from '../../service/auth'
 
 export default function Home({navigation}) {
-    
+    // const nome = api.get('/usuarios')
+    // .then((res) => {
+    //     alert(getToken);
+    // })
+    // .catch((error) => {
+    //     alert(error),
+    //     alert('Opa, deu ruim')
+    // })
     return(
         <View style={style.container}>
             <HeaderLogged 

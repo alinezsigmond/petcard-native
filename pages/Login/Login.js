@@ -5,6 +5,7 @@ import HeaderLogin from '../../components/HeaderLogin/HeaderLogin'
 import api from '../../api'
 
 import style from './style'
+import { getToken, setToken } from '../../service/auth'
 
 export default function Login({navigation}) {
     const [email, setEmail] = useState(null)
@@ -13,26 +14,21 @@ export default function Login({navigation}) {
         username: email,
         password: senha
     }
-    const token = ' '
-    const config = {
-        headers: {
-            'Authorization': `Bearer ${token}`
-        }
-    }
+    
     function logar(login) {
         api.post( 
             '/login',
-            login,
-            config
+            login
           )
         .then((res) => {
+            //setToken(res.data),
             console.log(res.data),
-            alert('Seu token está no console'),
+            alert('Seu token está no console')
             navigation.navigate('Home')
         })
         .catch((error) => {
-            alert(error),
-            alert('Opa, deu ruim')
+            alert("opa, deu ruim")
+            console.log(error)
         })
     }
     return(

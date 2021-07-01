@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getToken } from './service/auth';
 
 const token = ' '
 const api = axios.create({
@@ -8,12 +9,13 @@ const api = axios.create({
     }
 });
 
-// api.interceptors.request.use(async config => {
-//     const token = " ";
-//     if (token) {
-//         config.headers.Authorization = "Bearer"+{token};
-//     }
-//     return config;
-// });
+api.interceptors.request.use(async config => {
+    const token = getToken();
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+        console.log(token)
+    }
+    return config;
+});
 
 export default api;
