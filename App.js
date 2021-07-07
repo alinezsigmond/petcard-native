@@ -12,9 +12,11 @@ import Home from './pages/Home/Home'
 import MeusPets from './pages/MeusPets/MeusPets'
 import CadastroPet from './pages/CadastroPet/CadastroPet'
 import Menu from './components/Menu/Menu'
-import Teste from './pages/TesteAPI/teste'
 
 import api from './api'
+import HeaderSmall from './components/HeaderSmall/HeaderSmall'
+import TesteLogin from './pages/TesteLogin/TesteLogin'
+import TestePets from './pages/TestePets/TestePets'
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -30,15 +32,16 @@ export default function App() {
   return(
     <>
     <StatusBar backgroundColor="#3C6382" barStyle='light-content' />
-    {/* <MeusPets /> */}
-    {/* <Teste /> */}
+    {/* <TesteLogin /> */}
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen options={{ headerShown: false }} name='Teste login' component={TesteLogin} />
         <Stack.Screen options={{ headerShown: false }} name='Index' component={Index} />
         <Stack.Screen options={{ headerShown: false }} name='Erro' component={Error} />
         <Stack.Screen options={{ headerShown: false }} name='Login' component={Login} />
         <Stack.Screen options={{ headerShown: false }} name='Cadastro' component={Cadastro} />
         <Stack.Screen options={{ headerShown: false }} name='Cadastro pet' component={CadastroPet} />
+        <Stack.Screen options={{ headerShown: false }} name='Teste pets' component={TestePets} />
         <Stack.Screen options={{ headerShown: false }} name='Home' component={DrawerScreens} />
       </Stack.Navigator>
     </NavigationContainer>

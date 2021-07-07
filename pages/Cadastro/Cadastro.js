@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { ScrollView, Text, TextInput, View, TouchableHighlight, Image } from 'react-native'
+import { ScrollView, Text, TextInput, View, TouchableHighlight, Image, Alert } from 'react-native'
 import { TextInputMask } from 'react-native-masked-text'
 import HeaderLogin from '../../components/HeaderLogin/HeaderLogin'
 import api from '../../api'
@@ -37,11 +37,11 @@ export default function Cadastro() {
           )
         .then((res) => {
             console.log(res.data),
-            alert('Cadastro realizado com sucesso!')
+            Alert.alert('Sucesso','Seu cadastro foi feito')
         })
         .catch((error) => {
             alert(error),
-            alert('Opa, deu ruim')
+            Alert.alert('Opa','Algo deu errado')
         })
         // api.post('/usuarios', {
         //     headers: {

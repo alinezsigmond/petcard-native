@@ -1,23 +1,23 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { ImageBackground, View, Text, Image, TouchableHighlight, TextInput, ScrollView } from 'react-native'
+import { ImageBackground, View, Text, Image, TouchableHighlight, TextInput, ScrollView, Alert } from 'react-native'
 import {Picker} from '@react-native-picker/picker'
 import { TextInputMask } from 'react-native-masked-text'
-import DropDownPicker from 'react-native-dropdown-picker'
 import style from './style'
 
 import api from '../../api'
 
 import racasGato from './raca-gato.json'
 import racasCachorro from './raca-cachorro.json'
+import { getToken } from '../../service/auth'
 
 export default function CadastroPet({navigation}) {
-    const token = ' '
+    const header = ' '
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         api.get('/especies', {
             headers: {
-              'Authorization': `Bearer ${token}`
+              'Authorization': `Bearer ${header}`
             }
           }).then(response => setPosts(response.data));
     }, []);
@@ -26,7 +26,7 @@ export default function CadastroPet({navigation}) {
     const [nome, setNome] = useState(null);
     const [nascimento, setNascimento] = useState(null);
     const [sexo, setSexo] = useState(null);
-    const [castrado, setCastrado] = useState(false);
+    const [castrado, setCastrado] = useState(null);
     const [peso, setPeso] = useState(null);
     const pet = {
         especie: especie,
@@ -34,10 +34,30 @@ export default function CadastroPet({navigation}) {
         nome: nome,
         dataDeNascimento: nascimento,
         sexo: sexo,
+        castrado: castrado,
         peso: peso
     }
+    
     function cadastraPet(pet) {
-        
+        getToken()
+        .then ((value) => {
+            const token = JSON.parse(value);
+            console.log('Sei lá man: '+token);
+        })
+        api.post( 
+            '/pets',
+            pet,
+            config
+          )
+        .then((res) => {
+            Alert.alert('Sucesso','Pet cadastrado com sucesso')
+            navigation.goBack()
+        })
+        .catch((error) => {
+            console.log('Token cadastro pet: '+ token)
+            Alert.alert('Opa','Confira as informações  e tente novamente')
+            console.log(error)
+        })
     }
     
     function hasSelected(especie) {
@@ -79,9 +99,6 @@ export default function CadastroPet({navigation}) {
                     {posts.map(post => (
                         <Picker.Item key={post.id} label={post.nome} value={post.id} />
                     ))}
-                    {/* <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Selecione a espécie' value={null} />
-                    <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Cachorro' value={1} />
-                    <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Gato' value={2} /> */}
                 </Picker>
             </View>
 
@@ -134,7 +151,7 @@ export default function CadastroPet({navigation}) {
                 keyboardType='numeric'
                 type='datetime'
                 options={{
-                    format: 'DD/MM/YYYY'
+                    format: 'YYYY-MM-DD'
                 }}
                 returnKeyType="done"
                 style={style.input}
@@ -146,8 +163,19 @@ export default function CadastroPet({navigation}) {
                 selectedValue={sexo}
                 onValueChange={(itemValue, itemIndex) => setSexo(itemValue)}>
                     <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Sexo' value={null} />
-                    <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Fêmea' value={false} />
-                    <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Macho' value={true} />
+                    <Picker.Item key={especie.id} label='Fêmea' value={false} />
+                    <Picker.Item key={especie.id} label='Macho' value={true} />
+                </Picker>
+            </View>
+            <View style={style.picker}>
+                <Picker
+                dropdownIconColor='#3C6382'
+                selectedValue={castrado}
+                onValueChange={(itemValue, itemIndex) => setCastrado(itemValue)}
+                >
+                    <Picker.Item style={{color: '#3C6382'}} key={especie.id} label='Seu pet é castrado?' value={null} />
+                    <Picker.Item key={especie.id} label='Sim' value={true} />
+                    <Picker.Item key={especie.id} label='Não' value={false} />
                 </Picker>
             </View>
             <View style={style.input}>
@@ -168,7 +196,7 @@ export default function CadastroPet({navigation}) {
             <TouchableHighlight 
                 underlayColor='#32536E'
                 style={style.footer} 
-                onPress={() => console.log(cadastro)}
+                onPress={() => {console.log(pet)}}
             >
                 <Image 
                     style={style.arrow} 

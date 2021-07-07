@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, TouchableHighlight, Text } from 'react-native'
 import style from './style'
 
 import HeaderLogged from '../../components/HeaderLogged/HeaderLogged'
@@ -49,8 +49,13 @@ export default function Home({navigation}) {
                 <Icone
                     title="Sair"
                     imgSource={require('../../assets/images/icons/logout.png')}
+                    action={() => navigation.navigate('Index')}
                 />
             </View>
+                <TouchableHighlight 
+                onPress={() => {console.log(getToken())}} >
+                    <Text>clica e reza</Text>
+                </TouchableHighlight>
         </View>
     )
 }

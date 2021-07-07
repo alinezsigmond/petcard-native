@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.5",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-picker/picker": "^1.16.1",
     "@react-navigation/drawer": "^5.12.5",
@@ -18,7 +19,6 @@
     "axios": "^0.21.1",
     "react": "17.0.1",
     "react-native": "0.64.0",
-    "react-native-dropdown-picker": "^5.1.21",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-masked-text": "^1.12.5",
     "react-native-reanimated": "^2.2.0",

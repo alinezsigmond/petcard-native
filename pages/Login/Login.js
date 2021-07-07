@@ -5,6 +5,7 @@ import HeaderLogin from '../../components/HeaderLogin/HeaderLogin'
 import api from '../../api'
 
 import style from './style'
+import {AsyncStorage} from '@react-native-async-storage/async-storage'
 import { getToken, setToken } from '../../service/auth'
 
 export default function Login({navigation}) {
@@ -14,20 +15,19 @@ export default function Login({navigation}) {
         username: email,
         password: senha
     }
-    
+
     function logar(login) {
         api.post( 
             '/login',
             login
-          )
+        )
         .then((res) => {
-            //setToken(res.data),
-            console.log(res.data),
-            alert('Seu token está no console')
+            setToken(res.data),
+            
             navigation.navigate('Home')
         })
         .catch((error) => {
-            alert("opa, deu ruim")
+            Alert.alert('Opa','E-mail ou senha inválido')
             console.log(error)
         })
     }
