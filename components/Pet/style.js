@@ -6,8 +6,11 @@ export default StyleSheet.create({
         height: 100,
         backgroundColor: '#60A3BC',
         borderRadius: 8,
+        marginTop: 50,
+        // marginHorizontal: 15,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignSelf: 'center'
     },
     nome: {
         fontFamily: 'Summit-Attack',

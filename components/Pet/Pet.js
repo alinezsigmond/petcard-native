@@ -8,13 +8,17 @@ export default function Pet(props) {
    return(
         <>
         <TouchableHighlight
-            onPress={() => navigation.navigate('Cadastro pet') }
+            onPress={() => {props.action} }
         >
             <View style={style.icon}>
                 <Image source={props.imgSource} />
             </View>
         </TouchableHighlight>
-        <Text style={style.nome}>{props.nome}</Text>
+        <TouchableHighlight 
+            // onPress={ () => {props.action} }
+        >
+            <Text style={style.nome}>{props.nome}</Text>
+        </TouchableHighlight>
         </>
     )
 }

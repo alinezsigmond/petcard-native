@@ -1,25 +1,23 @@
-import React from 'react'
-import { View, TouchableHighlight, Text } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { View } from 'react-native'
 import style from './style'
 
 import HeaderLogged from '../../components/HeaderLogged/HeaderLogged'
 import Icone from '../../components/Icone/Icone'
 import api from '../../api'
-import { getToken } from '../../service/auth'
 
 export default function Home({navigation}) {
-    // const nome = api.get('/usuarios')
-    // .then((res) => {
-    //     alert(getToken);
-    // })
-    // .catch((error) => {
-    //     alert(error),
-    //     alert('Opa, deu ruim')
-    // })
+    const [info, setInfo] = useState();
+    const [nome, setNome] = useState();
+    useEffect(() => {
+        api.get('/userinfo')
+        .then(response => setInfo(response.data))
+        .then(() => setNome(info.nome));
+    }, []);
     return(
         <View style={style.container}>
             <HeaderLogged 
-            nome="Aline Zsigmond" 
+            nome={nome} 
             imgSource={require('../../assets/images/user.png')}
             />
             <View style={style.icons}>
@@ -52,10 +50,6 @@ export default function Home({navigation}) {
                     action={() => navigation.navigate('Index')}
                 />
             </View>
-                <TouchableHighlight 
-                onPress={() => {console.log(getToken())}} >
-                    <Text>clica e reza</Text>
-                </TouchableHighlight>
         </View>
     )
 }

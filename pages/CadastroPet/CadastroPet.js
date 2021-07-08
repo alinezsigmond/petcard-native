@@ -9,17 +9,11 @@ import api from '../../api'
 
 import racasGato from './raca-gato.json'
 import racasCachorro from './raca-cachorro.json'
-import { getToken } from '../../service/auth'
 
 export default function CadastroPet({navigation}) {
-    const header = ' '
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-        api.get('/especies', {
-            headers: {
-              'Authorization': `Bearer ${header}`
-            }
-          }).then(response => setPosts(response.data));
+        api.get('/especies').then(response => setPosts(response.data));
     }, []);
     const [especie, setEspecie] = useState(0);
     const [raca, setRaca] = useState();
@@ -29,8 +23,10 @@ export default function CadastroPet({navigation}) {
     const [castrado, setCastrado] = useState(null);
     const [peso, setPeso] = useState(null);
     const pet = {
-        especie: especie,
-        raca: raca,
+        especie: {
+            id: especie
+        },
+        // raca: raca,
         nome: nome,
         dataDeNascimento: nascimento,
         sexo: sexo,
@@ -39,22 +35,16 @@ export default function CadastroPet({navigation}) {
     }
     
     function cadastraPet(pet) {
-        getToken()
-        .then ((value) => {
-            const token = JSON.parse(value);
-            console.log('Sei lá man: '+token);
-        })
         api.post( 
             '/pets',
-            pet,
-            config
-          )
+            pet
+        )
         .then((res) => {
+            console.log(pet)
             Alert.alert('Sucesso','Pet cadastrado com sucesso')
             navigation.goBack()
         })
         .catch((error) => {
-            console.log('Token cadastro pet: '+ token)
             Alert.alert('Opa','Confira as informações  e tente novamente')
             console.log(error)
         })
@@ -196,7 +186,7 @@ export default function CadastroPet({navigation}) {
             <TouchableHighlight 
                 underlayColor='#32536E'
                 style={style.footer} 
-                onPress={() => {console.log(pet)}}
+                onPress={() => console.log(pet)}
             >
                 <Image 
                     style={style.arrow} 

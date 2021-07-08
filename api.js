@@ -9,14 +9,33 @@ const api = axios.create({
     }
 });
 
-api.interceptors.request.use(async config => {
-    const token = await getToken();
-    if (token) {
-        config.headers.Authorization = `Bearer ${token}`;
-        console.log("Api: "+token)
-    }
-    return config;
-});
+// api.interceptors.request.use(async config => {
+//     const token = await getToken();
+//     if (token) {
+//         config.headers.Authorization = `Bearer ${token}`;
+//         console.log("Api: "+token)
+//     }
+//     return config;
+// });
+
+api.interceptors.request.use(
+    config => {
+      return getToken()
+        .then(token => {
+          token = JSON.parse(token)
+          if (token)
+            config.headers.Authorization = `Bearer ${token}`
+          return Promise.resolve(config)
+        })
+        .catch(error => {
+          console.log(error)
+          return Promise.resolve(config)
+        })
+    },
+    error => {
+      return Promise.reject(error)
+    },
+  )
 
 export default api;
 

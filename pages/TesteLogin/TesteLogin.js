@@ -4,7 +4,6 @@ import { Text, TextInput, View, TouchableHighlight, Image, Alert } from 'react-n
 import api from '../../api'
 import style from './style'
 import { setToken } from '../../service/auth'
-import { NavigationContainer } from '@react-navigation/native'
 
 export default function TesteLogin({navigation}) {
     const [email, setEmail] = useState(null)

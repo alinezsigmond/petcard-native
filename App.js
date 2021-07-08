@@ -35,7 +35,7 @@ export default function App() {
     {/* <TesteLogin /> */}
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen options={{ headerShown: false }} name='Teste login' component={TesteLogin} />
+        {/* <Stack.Screen options={{ headerShown: false }} name='Teste login' component={TesteLogin} /> */}
         <Stack.Screen options={{ headerShown: false }} name='Index' component={Index} />
         <Stack.Screen options={{ headerShown: false }} name='Erro' component={Error} />
         <Stack.Screen options={{ headerShown: false }} name='Login' component={Login} />

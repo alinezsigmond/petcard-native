@@ -7,6 +7,9 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     pets: {
-        marginTop: 50,
+        // marginTop: 50,
+        backgroundColor: 'black',
+        width: '90%',
+        // flexDirection: 'row',
     }
 });
