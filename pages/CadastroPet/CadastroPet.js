@@ -23,16 +23,20 @@ export default function CadastroPet({navigation}) {
     const [castrado, setCastrado] = useState(null);
     const [peso, setPeso] = useState(null);
     const pet = {
-        especie: {
-            id: especie
-        },
-        raca: raca,
+        id: 0,
         nome: nome,
         dataDeNascimento: nascimento,
         sexo: sexo,
         castrado: castrado,
-        peso: peso
+        peso: peso,
+        // tutor: {
+        //     id: 1,
+        // },
+        raca: {
+            id: raca,
+            }
     }
+        
     
     function cadastraPet(pet) {
         api.post( 
@@ -169,16 +173,12 @@ export default function CadastroPet({navigation}) {
                 </Picker>
             </View>
             <View style={style.input}>
-                <TextInputMask 
+                <TextInput
                     placeholder='Peso (kg)'
                     placeholderTextColor='#3C6382'
                     color='#3C6382'
                     keyboardType='numeric'
-                    returnKeyType="done"                    
-                    type='custom'
-                    options={{
-                        mask: '99,9'
-                    }}
+                    returnKeyType="done"
                     onChangeText={value => setPeso(value)}
                 />
             </View>
@@ -186,7 +186,7 @@ export default function CadastroPet({navigation}) {
             <TouchableHighlight 
                 underlayColor='#32536E'
                 style={style.footer} 
-                onPress={() => console.log(pet)}
+                onPress={() => cadastraPet(pet)}
             >
                 <Image 
                     style={style.arrow} 
