@@ -8,18 +8,27 @@ import api from '../../api'
 
 export default function Home({navigation}) {
     const [info, setInfo] = useState();
-    const [nome, setNome] = useState();
+    const [dado, setDado] = useState({
+        nome: '',
+        loading: true
+    });
     useEffect(() => {
-        api.get('/userinfo')
-        .then(response => setInfo(response.data))
-        .then(() => setNome(info.nome));
-    }, []);
+        if(dado.loading) {
+            api.get('/userinfo')
+            .then(response => setInfo(response.data))
+            .then(() => setDado({...dado, loading: false}))
+        }
+        if (!dado.loading) {
+            setDado({...dado, nome: info.nome})
+        }
+    }, [dado.loading]);
     return(
         <View style={style.container}>
             <HeaderLogged 
-            nome={nome} 
+            nome={dado.nome} 
             imgSource={require('../../assets/images/user.png')}
-            />
+            />    
+            
             <View style={style.icons}>
                 <Icone 
                     title="Meus pets" 

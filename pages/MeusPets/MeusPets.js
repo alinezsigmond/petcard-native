@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {TouchableHighlight, View, SafeAreaView } from 'react-native'
+import {View, SafeAreaView } from 'react-native'
 import HeaderLogged from '../../components/HeaderLogged/HeaderLogged'
 import Pet from '../../components/Pet/Pet'
 import api from '../../api'
@@ -32,9 +32,9 @@ export default function MeusPets({navigation}) {
                 <View></View>
                 }
                 <Pet
-                imgSource={require('../../assets/images/add-pet.png')}
-                nome='Novo pet'
-                // action={navigation.navigate('Cadastro pet')}
+                    imgSource={require('../../assets/images/add-pet.png')}
+                    nome='Novo pet'
+                    action={() => navigation.navigate('Cadastro pet')}
                 />
             </SafeAreaView>
         </View>

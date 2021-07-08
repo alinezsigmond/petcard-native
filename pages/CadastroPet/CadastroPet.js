@@ -26,7 +26,7 @@ export default function CadastroPet({navigation}) {
         especie: {
             id: especie
         },
-        // raca: raca,
+        raca: raca,
         nome: nome,
         dataDeNascimento: nascimento,
         sexo: sexo,

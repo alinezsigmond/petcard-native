@@ -15,8 +15,6 @@ import Menu from './components/Menu/Menu'
 
 import api from './api'
 import HeaderSmall from './components/HeaderSmall/HeaderSmall'
-import TesteLogin from './pages/TesteLogin/TesteLogin'
-import TestePets from './pages/TestePets/TestePets'
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -41,7 +39,6 @@ export default function App() {
         <Stack.Screen options={{ headerShown: false }} name='Login' component={Login} />
         <Stack.Screen options={{ headerShown: false }} name='Cadastro' component={Cadastro} />
         <Stack.Screen options={{ headerShown: false }} name='Cadastro pet' component={CadastroPet} />
-        <Stack.Screen options={{ headerShown: false }} name='Teste pets' component={TestePets} />
         <Stack.Screen options={{ headerShown: false }} name='Home' component={DrawerScreens} />
       </Stack.Navigator>
     </NavigationContainer>
